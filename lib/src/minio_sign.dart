@@ -110,9 +110,9 @@ String presignSignatureV4(
   if (expires < 1) {
     throw MinioExpiresParamError('expires param cannot be less than 1 seconds');
   }
-  if (expires > 604800) {
-    throw MinioExpiresParamError('expires param cannot be greater than 7 days');
-  }
+  // if (expires > 604800) {
+  //   throw MinioExpiresParamError('expires param cannot be greater than 7 days');
+  // }
 
   final iso8601Date = makeDateLong(requestDate);
   final signedHeaders = getSignedHeaders(request.headers.keys);
